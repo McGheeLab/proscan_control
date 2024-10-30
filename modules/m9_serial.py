@@ -4,7 +4,7 @@
 import sys
 import platform
 import socket
-
+import serial
 
 ############################################
 print('platform.system(): ', platform.system())
@@ -15,10 +15,8 @@ print('hostname: ', hostname)
 
 
 ############################################
-if hostname == 'shiva2':
-  #
-  import serial
-  #
+if hostname == 'McGheeLab_3':
+
   # Starts serial port when module is loaded.
   # spo:  serial port
   ### spo = serial.Serial(
@@ -27,7 +25,7 @@ if hostname == 'shiva2':
   ###   )
   try:
     spo = serial.Serial(
-      port='COM5', baudrate=9600, bytesize=8,
+      port='COM3', baudrate=9600, bytesize=8,
       timeout=1, stopbits=serial.STOPBITS_ONE
       )
   except:
